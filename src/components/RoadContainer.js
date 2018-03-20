@@ -18,10 +18,14 @@ export default class RoadContainer extends React.Component {
     render() {
         return (
             <div className="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center">
+                            <button className="btn btn-info" onClick={this.doCrossRoad}>Cross Road!</button>
+                        </p>
+                    </div>
+                </div>
                 <Chicken didCrossRoad={this.state.didCrossRoad} />
-                <button className="btn btn-primary" onClick={this.doCrossRoad}>
-                    Cross Road!
-                </button>
             </div>
         );
     }

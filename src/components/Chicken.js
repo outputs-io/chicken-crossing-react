@@ -2,26 +2,36 @@ import React from "react";
 
 const chickenStyle = {
     div: {
-        background: `#eeeeee`,
-        width: 200,
-        height: 168,
-        backgroundImage: `url('./chicken.jpeg')`
+        width: 64,
+        height: 49,
+        background: `url('./chicken.png') no-repeat`,
+        backgroundSize: `contain`,
+        position: `relative`,
+        top: 0
     },
     goLeft: {
-        float: `left`
+        position: `absolute`,
+        bottom: 0,
+        left: 50,
+        transition: `transform 500ms ease-out`
     },
     goRight: {
-        float: `right`
+        position: `absolute`,
+        bottom: 0,
+        right: 50,
+        transition: `transform 500ms ease-out`
     },
 }
 
 
 const Chicken = props => (
-    <div style={props.didCrossRoad ? chickenStyle.goLeft : chickenStyle.goRight}>
-        <div style={chickenStyle.div}>
-
+    <div className="row">
+        <div className="col-md-12" style={{ minHeight: 240 }}>
+            <div style={props.didCrossRoad ? chickenStyle.goLeft : chickenStyle.goRight}>
+                <div style={chickenStyle.div}></div>
+            </div>
         </div>
-    </div>
+    </div >
 );
 
 export default Chicken;
